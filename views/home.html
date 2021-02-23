@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="public/css/home.css">
+    <title>首页</title>
+
+     <!-- 轮播引入 -->
+     <link rel="stylesheet" href="public/css/sliderx.css">
+    
+</head>
+<body>
+
+    <!-- 提示信息 -->
+    <div class="ding">
+		这里是提示信息！
+	</div>
+
+    
+    <div id="box">
+        <!-- 写文章按钮 -->
+        <div class="wart">写文章</div>
+        <!-- 写帖子按钮 -->
+        <div class="wpost">写帖子</div>
+        <!-- 提示信息板块 -->
+        <div class="ding">
+            这里是提示信息！
+        </div>
+
+        
+        <div class="header">
+        <div class="hleft">
+            <img src="public/img/ulogo.jpg" alt="" class="logo">
+            <ul>
+                <li class="choice">文 章</li>
+                <li>帖 子</li>
+                <li>聊 天</li>
+            </ul>
+        </div>
+        <div class="hright">
+            <ul>
+                <li>登 陆 / 注 册 </li>
+                <li>用户中心</li>
+            </ul>
+        </div>
+        </div>
+
+
+
+        <!-- 下面是三个div，分别是文章，帖子，聊天室 -->
+
+        <!-- 文章 -->
+        <div class="con article show">
+             <!-- 轮播图 -->
+        <div class="control-box">
+            <ul>
+                <li class="prev">
+                    <img src="public/img/left.jpg" alt="prev" class="fx">
+                </li>
+                <li class="next">
+                    <img src="public/img/right.jpg" alt="next" class="fx">
+                </li>
+            </ul>
+            <div class="bigbox">
+                <div id="switcher">
+                    <div class="content_1">
+                        <div class="box" style="background-image: url(public/img/hots_01.png);">
+                            <div class="shadow">
+                                <a href="http://www.baidu.com" >JS底层原理 <span class="author">作者:渣辉这</span></a>
+                            </div>
+                        </div>
+                        <div class="box" style="background-image: url(public/img/hots_02.png);">
+                            <div class="shadow">
+                                <a href="#">VUE实现轮播  <span class="author">作者:今日好i</span></a>
+                            </div>
+                        </div>
+                        <div class="box" style="background-image: url(public/img/hots_03.png);">
+                            <div class="shadow">
+                                <a href="#">NODE的底层架构  <span class="author">作者:孟son</span></a>
+                            </div>
+                        </div>
+                        <div class="box" style="background-image: url(public/img/hots_04.png);">
+                            <div class="shadow">
+                                <a href="#">如何实现双向绑定  <span class="author">作者:八点就出门</span></a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="content_2"></div>
+                </div>
+            </div>
+        </div>
+
+        <!-- 文章部分 -->
+  <!-- 文章部分 -->
+
+    <ul class="articles">
+        <li class="art">
+            <p>文章ID:<span style="margin-right: 10px;">1</span> 关于VUE的基层架构原理大撒大撒搞定哈闪光灯哈桑孤岛惊魂红豆沙很多国家大傻瓜 <span class="author">作者:天下风云水水水水水</span></p>
+            <div class="all" aid=''>
+                详情
+            </div>
+        </li>
+    </ul>
+
+
+
+
+
+        </div>
+
+
+        <!-- 帖子 -->
+        <div class="con post">
+            <ul class="posts">
+                <li class="po">
+                    <!-- 帖子左部分 -->
+                    <div class="pl">
+                        <div class="label">
+                            前端技术
+                        </div>
+                        <p class="title"><a href="">大家好这里是标题</a> --这里是用户名字</p>
+                        <p class="text">
+                            大家好这里是正文
+                        </p>
+                    </div>
+
+                    <!-- 帖子右部分 -->
+                    <div class="pr">
+                            <img src="public/img/pkm.jpg" alt="">
+                    </div>
+                    
+                    
+                </li>
+
+                <div class="hot">
+                    <ul class="hots">
+                        <li><span class="num">1</span><a href="">如何学习急急风之道</a> --<span class="name">亚索</span></li>
+                        <li><span class="num">2</span><a href="">打不过弟弟怎么办</a> --<span class="name">永恩</span></li>
+                        <li><span class="num">3</span><a href="">中路亚索怎么打</a> --<span class="name">索拉卡</span></li>
+                    </ul>
+                </div>
+            </ul>
+        </div>
+
+
+        <!-- 聊天室 -->
+        <div class="con chat">
+            <div class="top">
+                公共聊天室（欢迎大家畅所欲言）
+            </div>
+            <div class="cbox">
+                <div class="tl">
+                    <div class="OtherName">杨雨帆</div>
+                    <div class="OtherText">哥哥！</div>
+                </div>
+                <div class="tr">
+                    <div class="yourName">我</div>
+                    <div class="yourText">弟弟！</div>
+                </div>
+            </div>
+            <div class="write">
+                <div class="wl" contenteditable="true"></div>
+                <div class="wr">发 送</div>
+            </div>
+        </div>
+    </div>
+    <script src="public/js/jquery.js"></script>
+    <script src="public/js/home.js"></script>
+    <script type="text/javascript" src="public/js/sliderx.js"></script>
+</body>
+</html>

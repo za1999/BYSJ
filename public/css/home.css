@@ -1,0 +1,416 @@
+*{
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    text-decoration: none;
+}
+body{
+    min-width: 900px;
+}
+
+/* 写文章按钮的css */
+.wart{
+    display: inline-block;
+    width: 80px;
+    height: 40px;
+    background: rgb(0,154,97);
+    position: absolute;
+    left: 0;
+    top: 106px;
+    color: white;
+    font-weight: 600;
+    text-align: center;
+    line-height: 40px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+.wpost{
+    display: inline-block;
+    width: 80px;
+    height: 40px;
+    background: rgb(0,154,97);
+    position: absolute;
+    right: 0;
+    top: 106px;
+    color: white;
+    font-weight: 600;
+    text-align: center;
+    line-height: 40px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+/* 轮播图的css */
+.author{
+    font-weight: 600;
+    color: orange;
+    font-size: 18px;
+    margin-left: 10px;
+}
+.fx{
+    width: 50px;
+}
+.box{
+    border-radius: 10px;
+}
+/* 轮播图css结束 */
+
+
+
+/* 头部css开始 */
+.header{
+    height: 80px;
+    padding: 10px;
+    box-shadow: 0 1px 20px orange;
+    margin-bottom: 20px;
+    min-width: 900px;
+}
+.hleft,.hright{
+height: 100%;
+float: left;
+border-radius: 5px;
+}
+.hleft{
+    width: 60%;
+}
+.hleft .logo{
+    height: 100%;
+    float: left;
+    width: 20%;
+    max-width: 88px;
+    min-width: 68px;
+}
+.hleft ul{
+    height: 100%;
+    width: 80%;
+    float: left;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-around;
+    line-height: 80px;
+    
+}
+.hleft ul li{
+
+height: 80px;
+width: 140px;
+text-align: center;
+line-height: 80px;
+font-weight: 600;
+font-size: 24px;
+border-radius: 8px;
+font-family: "华文行楷";
+}
+
+
+.hright ul{
+    height: 100%;
+    width: 100%;
+    float: left;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-around;
+    line-height: 80px;
+    
+}
+.hright ul li{
+height: 80px;
+width: 140px;
+text-align: center;
+line-height: 80px;
+font-weight: 600;
+font-size: 24px;
+border-radius: 8px;
+font-family: "华文行楷";
+color: white;
+}
+.hright ul li:hover{
+    color: rgb(255,77,77);
+    cursor: pointer;
+}
+/* 类型的选择 */
+.hleft ul .choice{
+
+background-color: rgb(255,77,77);
+color: white;
+}
+.hleft ul li:hover{
+    cursor: pointer;
+    background: rgb(255,77,77);
+    color: white;
+}
+.hright{
+    width: 40%;
+    background-color: hotpink;
+}
+/**************头部css结束************/
+
+
+
+/* 三大块的相同css */
+.con{
+    min-height: 400px;
+    width: 1200px;
+    margin: 50px auto 50px;
+    box-shadow:0 1px 4px rgba(0, 0, 0, 0.3), 0 0 20px rgba(0, 0, 0, 0.1) inset;
+    border-radius: 5px;
+    display: none;
+    padding: 5px;
+}
+.show{
+    display: block;
+}
+
+
+/* 文章部分的文章css */
+/* 文章css开始 */
+.article{
+    min-height: 300px;
+}
+.articles{
+    width: 100%;
+}
+.art{
+    width: 98%;
+    height: 40px;
+    border: 1px solid lightgrey;
+    border-radius: 10px;
+    line-height: 40px;
+    padding-left: 20px;
+    color: skyblue;
+    position: relative;
+    margin-bottom: 20px;
+}
+.all{
+    height: 30px;
+    width: 50px;
+    line-height: 30px;
+    text-align: center;
+    color: white;
+    background-color: orange;
+    border-radius: 8px;
+    position: absolute;
+    top: 5px;
+    right: 20px;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+/* 文章css结束 */
+
+/****************** 下面是帖子区css**************************************** */
+.post{
+    min-height: 299px;
+}
+/* 囊括所有帖子的ul */
+.posts{
+    width: 800px;
+    padding: 20px;
+    position: relative;
+}
+/* 单个帖子 */
+.po{
+    width: 100%;
+    min-height: 120px;
+    box-shadow:0 1px 4px rgba(0, 0, 0, 0.3), 0 0 20px rgba(0, 0, 0, 0.1) inset;
+    border-radius: 5px;
+    padding: 20px;
+    position: relative;
+    margin-bottom: 20px;
+    font-weight: 600;
+    color: lightblue;
+}
+/* 帖子分左右 */
+.pl{
+    width: 70%;
+    height: 124px;
+    float: left;
+}
+.pr{
+    min-height: 100px;
+    max-height: 120px;
+    max-width: 150px;
+    position: absolute;
+    top: 30px;
+    right: 40px;
+
+}
+.pr img{
+    max-height: 120px;
+    max-width: 100px;
+    box-shadow:0 1px 4px rgba(0, 0, 0, 0.3), 0 0 20px rgba(0, 0, 0, 0.1) inset;
+    border-radius: 5px;
+}
+/* 左部标题 */
+.pl .label{
+    width: 100px;
+    height: 40px;
+    background: orange;
+    font-weight: 600;
+    color: white;
+    text-align: center;
+    line-height: 40px;
+    border-radius: 6px;
+    margin-bottom: 20px;
+}
+.pl .title{
+    margin-bottom: 10px;
+}
+/* 这里是热门帖子 */
+.posts .hot{
+    width: 300px;
+    height: 256px;
+    box-shadow:0 1px 4px rgba(0, 0, 0, 0.3), 0 0 20px rgba(0, 0, 0, 0.1) inset;
+    position: absolute;
+    top: 20px;
+    right: -330px;
+}
+.hot .hots{
+    width: 100%;
+    height: 100%;
+    padding: 15px;
+}
+
+.hot .hots li{
+    width: 88%;
+    height: 42px;
+    background: rgb(0,154,97);
+    margin-bottom: 20px;
+    padding: 10px;
+    line-height: 40px;
+    opacity: 0.6;
+    border-top-left-radius:5px ;
+    border-bottom-left-radius: 5px;
+}
+.hot .hots li .num{
+    display: inline-block;
+    height: 30px;
+    width: 30px;
+    text-align: center;
+    line-height: 30px;
+    border-radius: 50%;
+    background-color: white;
+    font-weight: 600;
+    color: red;
+    margin-right: 10px;
+}
+.hot .hots li a{
+    color: white;
+    font-weight: 600;
+}
+
+/******************** 下面是聊天区的css***********************/
+.chat{
+height: 530px;
+}
+/* 聊天室头部 */
+.chat .top{
+    height: 40px;
+    text-align: center;
+    line-height: 40px;
+    background-color:rgb(243,243,243);
+    font-weight: 600;
+    color: orangered;
+}
+/* 聊天室文字显示内容 */
+.chat .cbox{
+    height: 410px;
+    box-shadow:0 1px 4px rgba(0, 0, 0, 0.3), 0 0 20px rgba(0, 0, 0, 0.1) inset;
+   overflow: auto;
+}
+/* 聊天他人回复 */
+.tl{
+    float: left;
+    min-height: 40px;
+    width: 60%;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid lightgray;
+}
+.OtherName{
+    float: left;
+    height: 40px;
+    min-width: 60px;
+    font-weight: 600;
+    font-size: 24px;
+    color: lightgrey;
+}
+.OtherText{
+    float: right;
+    min-height: 40px;
+    width: 664px;
+    overflow: auto;
+    color: rgb(160, 116, 116);
+}
+/* 聊天自己回复 */
+.tr{
+    float: right;
+    min-height: 40px;
+    width: 60%;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid lightgray;
+}
+.yourName{
+    float: right;
+    height: 40px;
+    min-width: 60px;
+    font-weight: 600;
+    font-size: 24px;
+    color: lightgrey;
+}
+.yourText{
+    float: left;
+    min-height: 40px;
+    width: 664px;
+    overflow: auto;
+    color: rgb(160, 116, 116);
+    text-align: right;
+}
+
+/* 聊天框打字区 */
+.chat .write{
+    height: 80px;
+    
+}
+.wl{
+    height: 66px;
+    float: left;
+    width: 88%;
+    margin-top: 8px;
+    padding: 4px;
+    margin-right: 6px;
+    box-shadow:0 1px 4px rgba(0, 0, 0, 0.3), 0 0 20px rgba(0, 0, 0, 0.1) inset;
+    overflow: auto;
+}
+.wr{
+    margin-top: 8px;
+    height: 70px;
+    float: left;
+    width: 10%;
+    background-color: rgb(255,77,77);
+    line-height: 70px;
+    text-align: center;
+    cursor: pointer;
+    font-weight: 600;
+    color: white;
+    border-radius: 8px;
+}
+
+
+/* 提示信息的css */
+.ding{
+	width: 200px;
+	min-height: 100px;
+	position: fixed;
+	margin: 0 auto;
+	margin-top: 100px;
+	border-radius: 5px;
+	border: 1px solid lightblue;
+	background-color: white;
+	color:rgb(160,180,189);
+	line-height: 100px;
+	font-weight: 600;
+	display: none;
+	text-align: center;
+}
