@@ -5,6 +5,41 @@ if(sessionStorage.getItem('name')){
     $(".hright ul li").eq(0).text(sessionStorage.getItem('name'))
 }
 
+ // 登陆页面开始请求所有文章
+ $.ajax(
+    {
+        type:'post',
+        url:'http://localhost:3000/allart',
+        success:function(data){
+            $(".art").remove()
+            for(k in data) {
+                var con = `
+                <li class="art">
+                <p>文章ID:<span style="margin-right: 10px;">${data[k].id}</span> ${data[k].title} <span class="author">作者:${data[k].author}</span></p>
+                <div class="all" aid='${data[k].id}' onclick="look(this)">
+                    详情
+                </div>
+            </li>`
+                $(".articles").append(con)
+
+            }
+
+        },
+        error:function(e){
+            alert("接收数据错误！")
+        }
+    }
+)
+
+
+
+
+
+
+// 登陆注册的点击
+$(".login").click(function(){
+    window.location="/login"
+})
 
 
 
@@ -17,13 +52,22 @@ $(".hright ul li").eq(0).click(function(){
 })
 // 写文章判断及跳转
 $(".wart").click(function(){
-    alert("你好")
     if(sessionStorage.getItem('name')){
         window.location="/writepage"
     }else{
         tip("您未登陆！")
     }
 })
+// 写帖子判断及跳转
+$(".wpost").click(function(){
+    if(sessionStorage.getItem('name')){
+        window.location="/writepost"
+    }else{
+        tip("您未登陆！")
+    }
+})
+
+
 // 用户中心跳转
 $(".hright ul li").eq(1).click(function(){
     if(sessionStorage.getItem('name')){
@@ -81,6 +125,65 @@ $(".hright ul li").eq(1).click(function(){
             send()
         }
     })
+
+
+
+// 下面是帖子的一些js代码
+$.ajax(
+    {
+        type:'post',
+        url:'http://localhost:3000/allpost',
+        success:function(data){
+           $(".po").remove()
+           for(k in data) {
+            var con = `
+            <li class="po" postid='${data[k].postid}' onclick="lookpost(this)">
+            <!-- 帖子左部分 -->
+            <div class="pl">
+                <div class="label">
+                    <span>发布者:</span>${data[k].name}
+                </div>
+                <p class="title"><a href="javascript:;">${data[k].title}</a></p>
+                <p class="text">
+                ${data[k].con}
+                </p>
+            </div>
+
+            <!-- 帖子右部分 -->
+            <div class="pr">
+                    <img src="${data[k].img}" alt="">
+            </div>
+        </li>`
+            $(".posts").append(con)
+
+        }
+        },
+        error:function(e){
+            alert("接收数据错误！")
+        }
+    }
+)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 })
 
 // 提示信息的函数
@@ -110,4 +213,18 @@ function send(){
             $('.cbox').scrollTop(scrollHeight,200);
     }
 
+}
+
+//看文章的函数
+function look(e){
+    var id = $(e).attr("aid")
+    sessionStorage.setItem("artid",id);
+    window.location = "/showart"
+}
+
+// 看帖子的函数
+function lookpost(e){
+    var id = $(e).attr("postid")
+    sessionStorage.setItem("postid",id);
+     window.location = "/showpost"
 }

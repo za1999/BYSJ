@@ -1,0 +1,65 @@
+第三方模块通过npm下载
+
+模块直接导出某个成员而非挂载方式。用module.exports
+
+自己写的模块需要路径，npm下载和核心模块直接require（“模块标识符”）
+
+第三方包里面有个page.json文件，里面有个main属性，里面保存的是真正引用的文件的路径，如果没有page.json或者main默认是index.js，没有就往上级找，找到根目录为止，有page和main也是这样，找不到往上找node_moudle文件夹
+
+npm init按步骤创建项目，npm init -y创建默认项目
+
+npm --version查看版本
+
+npm i --global npm 升级自己
+
+npm uninstall 包名 卸载包，简写是un
+
+ctrl+c关闭服务器
+
+一般公开文件都放在public文件夹里面，公开后http://localhost:3000/public/img/a.jpg这样读，公开后比如html文件引入那些文件都可以直接用public里面的文件了，很方便
+views里面放浏览网页
+
+
+文件引入可以省略./，但是模块引入不能省略
+
+nodemon可以让你改完代码不需要重启服务器，安装好nodemon 文件名启动就好
+
+
+在express中使用art-template不仅需要art-template还需要express-art-template
+
+
+res.redirect('地址')重定向到一个新地方
+
+req.query只能拿get请求的参数
+
+在express中需要通过第三方插件来获得post请求的数据，我们需要body-parser第三方包，需要配置
+
+
+mongod开启mongodb数据库，（此时再开一个命令行工具输入）mongo连接数据库，exit关闭连接
+下面是一些命令行
+show dbs查看所有数据库
+use 数据库名字 切换到那个数据库，如果没有会新建
+db 查看当前操作的数据库
+show collections显示当前数据库的所有集合
+db.集合名字.find()查看集合里所有数据
+这些代码随便看看不多赘述
+
+
+下面是如何用node.js操纵mongodb
+使用第三方包mongoose来操作mongodb数据库
+mongoose包根据mongodb官方的mongodb包再做了一次封装
+网址是mongoosejs.com
+下载 npm i mongoose
+
+引入mongoose以后还需要链接数据库，这些东西在以往案例中都有，自行翻阅
+
+
+
+测试账号
+20@qq.com
+wyst2017
+
+
+
+
+

@@ -23,7 +23,7 @@ $(function(){
                         if(mm.length != mm.replace(/\s+/g,"").length){
                             tip("密码不能使用空格！")
                         }else{
-                            tip("登陆成功")
+                           
 
 
                                $.ajax({
@@ -35,9 +35,12 @@ $(function(){
             },
             success: function(data) {
                if(data.code==200){
-                   sessionStorage.setItem("email",data.email);
+                tip("登陆成功")
+                   setTimeout(() => {
+                       sessionStorage.setItem("email",data.email);
                    sessionStorage.setItem("name",data.name);
-          window.location="/home"
+                   window.location="/home"
+                   }, 500);
                }else{
                 tip("请输入正确的账号密码！")
                }

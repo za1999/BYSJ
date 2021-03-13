@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>文章页面</title>
+    <link rel="stylesheet" href="public/css/bootstrap.css">
+    <link rel="stylesheet" href="public/css/showart.css">
+    <script src="public/js/jquery.js"></script>
+    <script src="public/js/showart.js"></script>
+</head>
+<body>
+	<div class="ding">
+		这里是提示信息！
+	</div>
+
+
+    <!-- 这里是写评论的地方 -->
+    <div class="wcom">
+        <span style="font-weight: 600;color: red;font-size: 20;cursor: pointer;">x</span>
+        <div class="com" contenteditable="true"></div>
+        <div class="input">提交</div>
+    </div>
+
+
+
+    <a href="/home" class="back">首页</a>
+    <div id="box">
+        <p>作者:<span class="author"></span></p>
+        <p class="title">
+            阿里嘎多之怒
+        </p>
+
+        <div class="content">
+
+            <h4 id="pages">pages文件夹（必须）</h4>
+<p>放置页面文件夹的地方</p>
+<h4 id="utils">utils文件夹（非必要，你可以删）</h4>
+<p>存放一些公用文件的地方，比如css，    </p>
+<h4 id="appjs">app.js（必须）</h4>
+        </div>
+
+        <div class="comment">
+            <p>评论专区 <span class="incom">点我评论</span></p>
+            <ul>
+                <li>
+                    <span class="cleft">评论区暂无评论，但幸好有默认回复0.0</span>
+                    <span class="cright">管理员</span>
+                </li>
+            </ul>
+        </div>
+    </div>
+</body>
+</html>

@@ -12,6 +12,25 @@ body{
     margin: 0 auto;
     width: 620px;
 }
+
+/* 提示信息的css */
+.ding{
+	width: 200px;
+	min-height: 100px;
+	position: fixed;
+	margin: 0 auto;
+	margin-top: 100px;
+	border-radius: 5px;
+	border: 1px solid lightblue;
+	background-color: white;
+	color:rgb(160,180,189);
+	line-height: 100px;
+	font-weight: 600;
+	display: none;
+	text-align: center;
+    z-index: 99;
+}
+
 /* 这里是输入标题的css */
 .title{
     outline-style: none ;

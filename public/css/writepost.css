@@ -1,0 +1,106 @@
+*{
+    padding: 0;
+    margin: 0;
+    list-style: none;
+    box-sizing: border-box;
+    text-decoration: none;
+}
+
+
+/* 提示信息的css */
+.ding{
+	width: 200px;
+	min-height: 100px;
+	position: fixed;
+	margin: 0 auto;
+	margin-top: 100px;
+	border-radius: 5px;
+	border: 1px solid lightblue;
+	background-color: white;
+	color:rgb(160,180,189);
+	line-height: 100px;
+	font-weight: 600;
+	display: none;
+	text-align: center;
+    z-index: 99;
+}
+
+
+/* 大框的css */
+.con{
+width: 1200px;
+min-height: 600px;
+margin:0 auto;
+margin-top: 80px;
+box-shadow:0 1px 4px rgba(0, 0, 0, 0.3), 0 0 20px rgba(0, 0, 0, 0.1) inset;
+padding: 10px;
+margin-bottom: 60px;
+}
+
+
+/* 这里是输入标题的css */
+.title{
+    outline-style: none ;
+    border: 1px solid #ccc; 
+    border-radius: 3px;
+    padding: 13px 14px;
+    width: 100%;
+    font-size: 14px;
+    font-weight: 700;
+    font-family: "Microsoft soft";
+   margin: 0 auto;
+}
+
+/* 正文框的css */
+.wcon{
+    width: 100%;
+    height:300px;
+    overflow: auto;
+    border-bottom:4px solid lightgrey ;
+    padding: 8px;
+    outline: none;
+}
+
+/* 让div拥有placholder的属性 */
+.wcon:empty::before{
+    color:lightgrey;
+    content:attr(placeholder);
+}
+
+/* 显示图片的盒子 */
+.layui-upload-list{
+    text-align: center;
+    margin-top: 20px;
+}
+
+/* 返回首页的按钮 */
+.gohome{
+    position: absolute;
+    top: 20;
+    left:0;
+    height:46px;
+    width:100px;
+    background: rgb(255,77,77);
+    color:white;
+    text-align: center;
+    line-height: 46px;
+    font-weight: 600;
+    border-radius: 6px;
+    cursor: pointer;
+}
+
+/* 提交帖子的按钮 */
+.inputPost{
+    position: absolute;
+    top: 20;
+    right:0;
+    height:46px;
+    width:100px;
+    background: rgb(255,77,77);
+    color:white;
+    text-align: center;
+    line-height: 46px;
+    font-weight: 600;
+    border-radius: 6px;
+    cursor: pointer;
+}

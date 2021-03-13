@@ -219,6 +219,7 @@ color: white;
     margin-bottom: 20px;
     font-weight: 600;
     color: lightblue;
+    cursor: pointer;
 }
 /* 帖子分左右 */
 .pl{
@@ -243,7 +244,7 @@ color: white;
 }
 /* 左部标题 */
 .pl .label{
-    width: 100px;
+    min-width: 100px;
     height: 40px;
     background: orange;
     font-weight: 600;
@@ -413,4 +414,9 @@ height: 530px;
 	font-weight: 600;
 	display: none;
 	text-align: center;
+}
+
+.text{
+    height: 30px;
+    overflow: auto;
 }

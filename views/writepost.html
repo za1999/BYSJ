@@ -4,9 +4,42 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <link rel="stylesheet" href="public/css/writepost.css">
+    <title>写帖子页面</title>
 </head>
 <body>
-    你好这里是写帖子页面
+	<div class="ding">
+		这里是提示信息！
+	</div>
+
+    <!-- 返回主页的按钮 -->
+    <div class="gohome">返回主页</div>
+
+    <!-- 这里是提交帖子的按钮 -->
+    <div class="inputPost">发布帖子</div>
+
+
+
+    <div class="con">
+        <!-- 标题的input -->
+        <input type="text" placeholder="请在这里填入标题(最多16字)" class="title" maxlength="16">
+
+
+        <!-- 写正文的div -->
+        <div class="wcon" contenteditable placeholder="请在这里输入正文"></div>
+
+
+
+
+        <!-- 下面是选择图片 -->
+        
+        <p style="text-align: center;font-weight: 600;">选择你的封面图（可不选）</p>
+        <input type="file" id="image" lay-verify="required" onchange="toBase64()" accept="image/jpeg,image/png,image/jpg" class="layui-upload-button" id='file' style="margin-left: 20px;">
+        <div class="layui-upload-list">
+            <img class="layui-upload-img" name="titleBase64Img" id="base64Img" src="" style="display: none" max-width="400px" ">
+        </div>
+    </div>
+    <script src="public/js/jquery.js"></script>
+    <script src="public/js/writepost.js"></script>
 </body>
 </html>
