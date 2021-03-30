@@ -10,13 +10,40 @@
     <script src="public/js/showpost.js"></script>
 </head>
 <body>
+    <div class="ding">
+		这里是提示信息！
+	</div>
+  <!-- 这里是写评论的地方 -->
+  <div class="pcom">
+    <span style="font-weight: 600;color: red;font-size: 20;cursor: pointer;">x</span>
+    <div class="icom" contenteditable="true"></div>
+    <div class="input">评论</div>
+</div>
+
+
+
     <!-- 返回首页 -->
     <a href="/home" class="back">首页</a>
+    <div class="join">加入讨论</div>
 
 
     <!-- 帖子的主模块 -->
     <div class="post">
-        <p class="title">万万没想到啊！！！！！</p>
+        <div class="title">万万没想到啊！！！！！</div>
+        <!-- 楼主的楼！ -->
+        <div class="head">
+            <p class="name">
+                <span>默认名</span>（<span>北京时间三点</span>）
+            </p>
+            <div class="con maincon">
+                无正文
+            </div>
+            <div style="text-align: center;">
+                    <img src="" alt="" class="img">
+            </div>
+        </div>
+        <!-- 其他人的楼！！ -->
+ 
     </div>
 </body>
 </html>

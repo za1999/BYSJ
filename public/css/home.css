@@ -360,6 +360,10 @@ height: 530px;
     font-size: 24px;
     color: lightgrey;
 }
+.wo{
+    position: relative;
+    top:2px;
+}
 .yourText{
     float: left;
     min-height: 40px;
@@ -419,4 +423,16 @@ height: 530px;
 .text{
     height: 30px;
     overflow: auto;
+}
+/* 聊天时间样式 */
+.talkTime{
+    font-weight: 400;
+    font-size: 16px;
+    color: rgb(102,125,180);
+}
+.timeleft{
+    margin-left: 5px;
+}
+.timeright{
+    margin-right:5px;
 }

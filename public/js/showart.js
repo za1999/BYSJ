@@ -45,7 +45,12 @@ allcom()
 
     // 点击出现评论框
     $(".incom").click(function(){
-        $(".wcom").show(1000)
+        if(sessionStorage.getItem('name')){
+            $(".wcom").show(1000)
+        }else{
+            tip("请登录")
+        }
+        
     })
 
     // 监听一下enter
@@ -83,6 +88,7 @@ function send(){
                 success: function(data) {
                     console.log(data)
                    if(data==200){
+                    $(".com").text('')
                     tip("提交评论成功！")
                     $(".wcom").hide(1000)
                     allcom()

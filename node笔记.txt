@@ -53,6 +53,7 @@ mongoose包根据mongodb官方的mongodb包再做了一次封装
 
 引入mongoose以后还需要链接数据库，这些东西在以往案例中都有，自行翻阅
 
+在express中用socket.io插件来实现双向绑定
 
 
 测试账号

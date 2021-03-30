@@ -1,4 +1,4 @@
-var img='public/img/pkm.jpg';
+var img='';
 
 $(function(){
  

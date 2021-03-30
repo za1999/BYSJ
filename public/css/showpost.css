@@ -19,11 +19,43 @@
     border-top-right-radius: 8px;
     border-bottom-right-radius: 8px;
 }
+.join{
+    position: fixed;
+    top: 200px;
+    left: 0px;
+    width: 72px;
+    height: 40px;
+    color:white ;
+    background-color: rgb(49,176,213);
+    font-weight: 600;
+    text-align: center;
+    line-height: 40px;
+    border-top-right-radius: 8px;
+    border-bottom-right-radius: 8px;
+    cursor: pointer;
+}
+/* 提示信息的css */
+.ding{
+	width: 200px;
+	min-height: 100px;
+	position: fixed;
+	margin: 0 auto;
+	margin-top: 100px;
+	border-radius: 5px;
+	border: 1px solid lightblue;
+	background-color: white;
+	color:rgb(160,180,189);
+	line-height: 100px;
+	font-weight: 600;
+	display: none;
+	text-align: center;
+    z-index: 99;
+}
 
 /* 主模块 */
 .post{
     width:1200px;
-    min-height: 400px;
+    min-height: 40px;
     box-shadow:0 1px 4px rgba(0, 0, 0, 0.3), 0 0 20px rgba(0, 0, 0, 0.1) inset;
     margin:0 auto;
     margin-top:40px;
@@ -35,4 +67,81 @@
 text-align: center;
 font-weight:600;
 font-size:24px;
+height: 50px;
+line-height: 50px;
+color:rgb(141, 115, 67);
+box-shadow:0 1px 4px rgba(0, 0, 0, 0.3), 0 0 20px rgba(0, 0, 0, 0.1) inset;
+}
+/* 下面是楼主帖的样式 */
+.head{
+    box-shadow:0 1px 4px rgba(0, 0, 0, 0.3), 0 0 20px rgba(0, 0, 0, 0.1) inset;
+    min-height: 260px;
+    background-color: rgb(166, 228, 166);
+    padding: 5px;
+}
+.name{
+    color:rgb(139, 76, 136);
+    font-weight:600;
+    margin-bottom: 15px;
+}
+.con{
+    width: calc(100% - 100px);;
+    text-align: left;
+    padding-left: 60px;
+    color: rgb(175, 144, 85);
+    line-height: 28px;
+    font-family: '宋体';
+    margin-bottom: 15px;
+}
+.img{
+    max-width: 400px;
+    border-radius: 5px;
+}
+
+
+/* 下面非楼主的评论 */
+.com{
+    box-shadow:0 1px 4px rgba(0, 0, 0, 0.3), 0 0 20px rgba(0, 0, 0, 0.1) inset;
+    min-height: 100px;
+    background-color: rgb(172, 201, 172);
+    padding: 5px;
+}
+
+
+/* 写评论那个模块 */
+.pcom{
+    position: fixed;
+    top:150px;
+    left:calc(50% - 200px);
+    height: 222px;
+    width: 400px;
+    box-shadow:0 1px 4px rgba(0, 0, 0, 0.3), 0 0 20px rgba(0, 0, 0, 0.1) inset;
+    border-radius: 5px;
+    background-color: white;
+    padding: 5px;
+    display: none;
+}
+/* 写评论的打字框 */
+.pcom .icom{
+    width:97%;
+    height:150px;
+    box-shadow:0 1px 4px rgba(0, 0, 0, 0.3), 0 0 20px rgba(0, 0, 0, 0.1) inset;
+    padding: 5px;
+    overflow: auto;
+    outline: lightblue;
+}
+/* 写评论的提交按钮 */
+.input{
+    height:40px;
+    width: 80px;
+    cursor: pointer;
+    text-align: center;
+    line-height: 40px;
+    background-color: red;
+    color: white;
+    font-weight:600;
+    border-radius: 5px;
+    margin:0 auto;
+    margin-top:4px;
+    
 }

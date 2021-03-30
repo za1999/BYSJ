@@ -4,7 +4,8 @@
 var showdown  = require('showdown'),
 converter = new showdown.Converter();
 
-
+// 这里设置一个存放聊天信息的数组
+const talks = []
 
 // 导入数据库！
 var mon = require('./mongo')
@@ -88,7 +89,6 @@ router.get("/writepage",function(req,res){
 
 //设置注册的接口
 router.post("/register",function(req,res){
-    console.log(req.body)
     mon.user.find(
         {
             $or: [
@@ -193,10 +193,9 @@ router.post("/allart",function(req,res){
 
 
 
-// 这里是提交评论的路由
+// 这里是提交文章评论的路由
 router.post("/addmon",function(req,res){
 
-    console.log(req.body)
     var com = new mon.com({
 artid:req.body.artid,
 name: req.body.name,
@@ -212,7 +211,6 @@ com.save().then(() => {
 
 // 查找当前文章所有评论的路由
 router.post("/allcom",function(req,res){
-    console.log(req.body.artid)
 
     mon.com.find(
         {
@@ -285,14 +283,106 @@ router.get("/showpost",function(req,res){
 
 })
 
+// 查看帖子内容路由
+router.post("/showpost",function(req,res){
 
-
-
+    mon.post.findOne( {
+        postid:req.body.id
+    },
+        function(err,ret){
+        if(err){
+            console.log("查询失败")
+            res.send(0)
+        }else{          
+            res.send(ret)
+        }
+    }
+    )
+ 
+})
+// 这里是提交帖子评论的路由
+router.post("/addpmon",function(req,res){
+    var pcom = new mon.pcom({
+postid:req.body.postid,
+name: req.body.name,
+con:req.body.con,
+time:req.body.time
+});
+pcom.save().then(() => {
+    res.send('200')
+ });
  
 
+})
+// 查找当前帖子所有评论的路由
+router.post("/allpcom",function(req,res){
 
+    mon.pcom.find(
+        {
+            postid:req.body.postid
+        },
+        function(err,ret){
+        if(err){
+            console.log("查询失败")
+            res.send(0)
+        }else{
+            var data = ret;
+                data.code = 200;               
+                res.send(data)
+        }
+    })
+ 
 
+})
+ /*****************************用户中心 ************************/
+ // 查找你所有的帖子
+ router.post("/yourpost",function(req,res){
 
+    mon.post.find( {
+        email:req.body.email
+    },
+        function(err,ret){
+        if(err){
+            console.log("查询失败")
+            res.send(0)
+        }else{
+            res.send(ret)
+        }
+    }
+    )
+})
+ // 查找你所有的文章
+ router.post("/yourart",function(req,res){
+
+    mon.art.find( {
+        email:req.body.email
+    },
+        function(err,ret){
+        if(err){
+            console.log("查询失败")
+            res.send(0)
+        }else{
+            res.send(ret)
+        }
+    }
+    )
+})
+
+// 这里是接收聊天内容的接口
+ router.post("/receiveTalk", function (req, res) {
+    talks.push(req.body)
+    console.log(talks)
+   res.send(200)
+ });
+// 发送聊天内容的接口
+ router.post("/sendTalk", function (req, res) {
+     let talk = talks.slice(req.body.num);
+   if(talks.length>req.body.num){
+          res.send(talk);
+   }else{
+          res.send("0");
+   }
+ });
 
     module.exports = router
 

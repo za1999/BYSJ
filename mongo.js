@@ -99,12 +99,36 @@ var artinfo = new Schema({
 })
 
 
+// 创建帖子评论
+var pcomment = new Schema({
+
+    name:{
+        type:String,
+        required:true //必须要有
+    },
+    con:{
+    type:String,
+    required:true //必须要有
+        },
+    postid:{
+        type:String,
+        required:true //必须要有
+    } ,
+    time:{
+        type:String,
+        required:true //必须要有
+    }  
+})
+
+
+
 //创建一个模型，就是在设计数据库，mongodb非常灵活，只需要在代码中设计你的数据库就可以了
 //mongoose就可以让你的这个设计过程变得非常简单
 const user = mongoose.model('userinfo', userinfo);
 const art = mongoose.model('artinfo', artinfo);
 const com = mongoose.model('comment', comment);
 const post = mongoose.model('posts', posts);
+const pcom = mongoose.model('pcomment', pcomment);
 
 // 账户表
 module.exports.user = user
@@ -114,7 +138,8 @@ module.exports.art = art
 module.exports.com = com
 // 帖子表
 module.exports.post = post
-
+// 帖子评论表
+module.exports.pcom = pcom
 
 
 

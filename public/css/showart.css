@@ -60,7 +60,8 @@
     padding: 15px;
 }
 .comment li{
-    width: 100%;
+    display: inline-block;
+    max-width: 1200px;
     min-height: 30px;
     border: 1px solid burlywood;
     line-height: 20px;
@@ -72,6 +73,7 @@
 .cleft{
     /* float: left; */
     font-family: "宋体";
+    margin-right: 8px;
 }
 .cright{
     float: right;

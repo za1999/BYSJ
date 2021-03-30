@@ -40,7 +40,7 @@ $(function(){
                        sessionStorage.setItem("email",data.email);
                    sessionStorage.setItem("name",data.name);
                    window.location="/home"
-                   }, 500);
+                   }, 2500);
                }else{
                 tip("请输入正确的账号密码！")
                }
@@ -125,6 +125,7 @@ $(function(){
   //游客登陆
   var youke = this.getElementById("youke");
   youke.onclick = function(){
+    sessionStorage.clear();
     // sessionStorage.removeItem('username');
     window.location="/home"
 
