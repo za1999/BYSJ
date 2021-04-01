@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+
+<html lang="en" class="no-js">
+  <head>
+    <meta charset="utf-8" />
+
+    <title>管理员登陆界面</title>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <meta name="description" content="" />
+
+    <meta name="author" content="" />
+
+    <!-- CSS -->
+
+    <link rel="stylesheet" href="public/css/admin/reset.css" />
+
+    <link rel="stylesheet" href="public/css/admin/supersized.css" />
+
+    <link rel="stylesheet" href="public/css/admin/style.css" />
+
+    <style>
+      html,
+      body {
+        background-color: black;
+      }
+      /* 提示信息的css */
+      .ding {
+        width: 200px;
+        min-height: 100px;
+        position: fixed;
+        margin: 0 auto;
+        margin-top: 100px;
+        border-radius: 5px;
+        border: 1px solid lightblue;
+        background-color: white;
+        color: rgb(160, 180, 189);
+        line-height: 100px;
+        font-weight: 600;
+        display: none;
+        text-align: center;
+        z-index: 99;
+      }
+    </style>
+  </head>
+
+  <body>
+    <div class="ding">这里是提示信息！</div>
+    <div class="page-container">
+      <h1>管理员登陆</h1>
+
+      <div>
+        <input
+          type="text"
+          name="username"
+          class="userEmail"
+          placeholder="邮箱"
+        />
+        <br />
+        <input
+          type="password"
+          name="password"
+          class="password"
+          placeholder="密码"
+        />
+        <br />
+        <button class="adminLogin">登陆</button>
+        <br />
+      </div>
+
+      <div class="error"><span>+</span></div>
+    </div>
+
+    <!-- Javascript -->
+
+    <script src="public/js/jquery.js"></script>
+    <script src="public/js/admin/adminLogin.js"></script>
+  </body>
+</html>

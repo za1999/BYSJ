@@ -47,6 +47,12 @@ body{
     font-size: 18px;
     margin-left: 10px;
 }
+.authorn{
+    font-weight: 600;
+    color: orange;
+    font-size: 18px;
+    margin-left: 10px;
+}
 .fx{
     width: 50px;
 }
@@ -246,7 +252,7 @@ color: white;
 .pl .label{
     min-width: 100px;
     height: 40px;
-    background: orange;
+    background: rgb(246,214,95);
     font-weight: 600;
     color: white;
     text-align: center;
@@ -256,6 +262,9 @@ color: white;
 }
 .pl .title{
     margin-bottom: 10px;
+}
+.pl .title a{
+    color: rgb(117, 95, 63);
 }
 /* 这里是热门帖子 */
 .posts .hot{
@@ -317,6 +326,7 @@ height: 530px;
 .chat .cbox{
     height: 410px;
     box-shadow:0 1px 4px rgba(0, 0, 0, 0.3), 0 0 20px rgba(0, 0, 0, 0.1) inset;
+    padding: 4px;
    overflow: auto;
 }
 /* 聊天他人回复 */

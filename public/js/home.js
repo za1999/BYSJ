@@ -9,6 +9,13 @@ $(function () {
     type: "post",
     url: "http://localhost:3000/allart",
     success: function (data) {
+      console.log(data)
+      for(let i=0;i<4;i++){
+     
+          $(".newsTitle").eq(i).text(data[i].title);
+         $(".authorn").eq(i).text("作者:"+data[i].author);
+         $(".homeNews").eq(i).attr("artid",data[i].id);
+      }
       $(".art").remove();
       for (k in data) {
         var con = `
@@ -26,19 +33,29 @@ $(function () {
     },
   });
 
+
+// 轮播图的跳转
+$(".homeNews").click(function(){
+  if($(this).attr("artid")){
+    sessionStorage.setItem("artid", $(this).attr("artid"));
+    window.location = "/showart";
+  }
+});
+
+
   // 登陆注册的点击
   $(".login").click(function () {
-    window.location = "/login";
+
+	var r = confirm("您要前往登陆注册页面吗？");
+  if (r == true) {
+       window.location = "/login";
+      return true;
+  } else {
+   return 0;
+  }
+   
   });
 
-  // 登陆注册跳转
-  $(".hright ul li")
-    .eq(0)
-    .click(function () {
-      if (sessionStorage.getItem("name")) {
-        window.location = "/";
-      }
-    });
   // 写文章判断及跳转
   $(".wart").click(function () {
     if (sessionStorage.getItem("name")) {
