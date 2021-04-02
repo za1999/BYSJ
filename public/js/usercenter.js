@@ -1,4 +1,9 @@
 $(function(){
+
+// 改用户名和邮箱
+$(".infos span").eq(1).text(sessionStorage.getItem("name"));
+$(".infos span").eq(4).text(sessionStorage.getItem("email"));
+
      // 开始请求你的帖子
  $.ajax(
     {
