@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      * {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+        box-sizing: border-box;
+        text-decoration: none;
+      }
+      .box {
+        padding: 10px;
+      }
+      .content {
+        min-height: 400px;
+      }
+      .userNum {
+        text-align: right;
+        margin-bottom: 6px;
+      }
+      .usersBox {
+        padding: 10px;
+      }
+      /* 单个用户框 */
+      .users {
+        border-bottom: 1px solid gray;
+      }
+      .user {
+        width: 100%;
+        min-height: 40px;
+        border: 1px solid gray;
+        border-bottom: none;
+      }
+
+      .userinfo {
+        display: flex;
+      }
+      .userinfo li {
+        min-height: 40px;
+        text-align: center;
+        overflow: hidden; /*超出部分隐藏*/
+        white-space: nowrap; /*不换行*/
+        text-overflow: ellipsis; /*超出部分文字以...显示*/
+
+        display: -webkit-box;
+ -webkit-box-pack: center;
+ box-pack: center;
+ -webkit-box-align: center;
+ box-align: center;
+      }
+      .userinfo li:nth-child(1) {
+        width: 150px;
+      }
+      .userinfo li:nth-child(2) {
+        width: 200px;
+      }
+      .userinfo li:nth-child(3) {
+        width: 200px;
+      }
+      .userinfo li:nth-child(4) {
+        width: 300px;
+      }
+      .userinfo li:nth-child(5) {
+        width: 200px;
+      }
+        .userinfo li:nth-child(6) {
+        width: 100px;
+      }
+        .userinfo li:nth-child(6) img{
+        max-width: 100px;
+      }
+      .userinfo li:nth-child(7) {
+        width: 100px;
+      }
+      .userone li:nth-child(7) {
+        background-color: lightblue;
+        cursor: pointer;
+      }
+      .userhead {
+        background-color: rgb(68, 47, 47);
+        color: white;
+        font-weight: 600;
+      }
+      .userone li:hover {
+        background-color: lightblue;
+      }
+      .userone li:nth-child(7):hover {
+        background-color: orange;
+        cursor: pointer;
+      }
+      /* 提示信息的css */
+      .ding {
+        width: 200px;
+        min-height: 100px;
+        position: fixed;
+        margin: 0 auto;
+        margin-top: 100px;
+        border-radius: 5px;
+        border: 1px solid lightblue;
+        background-color: white;
+        color: rgb(160, 180, 189);
+        line-height: 100px;
+        font-weight: 600;
+        display: none;
+        text-align: center;
+        z-index: 99;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="ding">这里是提示信息！</div>
+    <div class="box">
+      <div class="content">
+        <div class="usersBox">
+          <p class="userNum">
+            <span class="">所有帖子:</span><span class="num">未知</span
+            ><span>篇</span>
+          </p>
+          <ul class="users">
+            <li class="user userhead">
+              <ul class="userinfo">
+                <li>帖子ID</li>
+                <li>帖子作者</li>
+                <li>帖子标题</li>
+                <li>帖子内容</li>
+                <li>所属邮箱</li>
+                <li>帖子图</li>
+                <li>功能</li>
+              </ul>
+            </li>
+            <li class="user userone">
+              <ul class="userinfo">
+                <li>文章ID</li>
+                <li>文章作者</li>
+                <li>文章标题</li>
+                <li>文章内容</li>
+                <li>所属邮箱</li>
+                 <li>帖子图</li>
+                <li>功能</li>
+              </ul>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <script src="http://localhost:3000/public/js/jquery.js"></script>
+    <script src="http://localhost:3000/public/js/admin/adPost.js"></script>
+  </body>
+</html>

@@ -339,9 +339,89 @@ router.get("/Admin-login", function (req, res) {
 router.get("/AdMain", function (req, res) {
   res.render("admin/AdMain.html");
 });
+// 为管理员的用户页面设置子路由
+router.get("/AdMain/user", function (req, res) {
+  res.render("admin/AdUser.html");
+});
+// 为管理员的文章页面设置子路由
+router.get("/AdMain/art", function (req, res) {
+  res.render("admin/AdArt.html");
+});
+// 为管理员的帖子页面页面设置子路由
+router.get("/AdMain/post", function (req, res) {
+  res.render("admin/AdPost.html");
+});
+// 获取所有的用户信息返回
+router.post("/AdAllUser", function (req, res) {
+  mon.user.find(function (err, ret) {
+    if (err) {
+      console.log("查询失败");
+      res.send(0);
+    } else {
+      res.send(ret);
+    }
+  });
+});
+// 管理员删除文章的接口
+router.post("/deleteArt", function (req, res) {
+
+  mon.art.remove(
+    {
+      id: req.body.id,
+    },
+    function (err, ret) {
+      if (err) {
+        console.log("删除失败");
+        res.send("0");
+      } else {
+        var data = ret;
+        data.code = 200;
+        res.send(data);
+      }
+    }
+  );
+});
+// 管理员删除帖子的接口
+router.post("/deletePost", function (req, res) {
+
+  mon.post.remove(
+    {
+      postid: req.body.id,
+    },
+    function (err, ret) {
+      if (err) {
+        console.log("删除失败");
+        res.send("0");
+      } else {
+        var data = ret;
+        data.code = 200;
+        res.send(data);
+      }
+    }
+  );
+});
+// 管理员删除用户的接口
+router.post("/deleteUser", function (req, res) {
+
+  mon.user.remove(
+    {
+      email: req.body.email,
+    },
+    function (err, ret) {
+      if (err) {
+        console.log("删除失败");
+        res.send("0");
+      } else {
+        var data = ret;
+        data.code = 200;
+        res.send(data);
+      }
+    }
+  );
+});
+
 // 管理员登陆验证
 router.post("/AdminHandle", function (req, res) {
-  //   AdminInfo;
   AdminInfo.forEach((item) => {
     if (item.email == req.body.email && item.password == req.body.password) {
       res.send(item.name);

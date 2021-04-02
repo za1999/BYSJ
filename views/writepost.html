@@ -6,6 +6,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="public/css/writepost.css">
     <title>写帖子页面</title>
+    <style>
+        .layui-upload-img{
+            max-width: 600px;
+        }
+    </style>
 </head>
 <body>
 	<div class="ding">
@@ -36,7 +41,7 @@
         <p style="text-align: center;font-weight: 600;">选择你的封面图（可不选）</p>
         <input type="file" id="image" lay-verify="required" onchange="toBase64()" accept="image/jpeg,image/png,image/jpg" class="layui-upload-button" id='file' style="margin-left: 20px;">
         <div class="layui-upload-list">
-            <img class="layui-upload-img" name="titleBase64Img" id="base64Img" src="" style="display: none" max-width="400px" ">
+            <img class="layui-upload-img" name="titleBase64Img" id="base64Img" src="" >
         </div>
     </div>
     <script src="public/js/jquery.js"></script>
