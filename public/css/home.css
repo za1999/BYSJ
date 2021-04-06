@@ -175,9 +175,10 @@ color: white;
 }
 .articles{
     width: 100%;
+    padding: 15px;
 }
 .art{
-    width: 98%;
+    width: 96%;
     height: 40px;
     border: 1px solid lightgrey;
     border-radius: 10px;
@@ -217,7 +218,7 @@ color: white;
 /* 单个帖子 */
 .po{
     width: 100%;
-    min-height: 120px;
+    min-height: 100px;
     box-shadow:0 1px 4px rgba(0, 0, 0, 0.3), 0 0 20px rgba(0, 0, 0, 0.1) inset;
     border-radius: 5px;
     padding: 20px;
@@ -243,14 +244,15 @@ color: white;
 
 }
 .pr img{
-    max-height: 120px;
+    max-height: 100px;
     max-width: 100px;
     box-shadow:0 1px 4px rgba(0, 0, 0, 0.3), 0 0 20px rgba(0, 0, 0, 0.1) inset;
     border-radius: 5px;
 }
 /* 左部标题 */
 .pl .label{
-    min-width: 100px;
+    display: inline-block;
+   padding: 0 15px;
     height: 40px;
     background: rgb(246,214,95);
     font-weight: 600;
@@ -311,7 +313,7 @@ color: white;
 
 /******************** 下面是聊天区的css***********************/
 .chat{
-height: 530px;
+height: 542px;
 }
 /* 聊天室头部 */
 .chat .top{
