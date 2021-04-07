@@ -78,7 +78,7 @@ body {
   padding: 2px;
   cursor: pointer;
   margin-top: 5px;
-  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.3), 0 0 20px rgba(0, 0, 0, 0.1) inset;
+  box-shadow: 0 1px 4px rgba(238, 232, 232, 0.3), 0 0 20px rgba(228, 220, 220, 0.1) inset;
   margin-bottom: 12px;
    /* background-color: white; */
    border-radius: 5px;

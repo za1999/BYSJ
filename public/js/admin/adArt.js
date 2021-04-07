@@ -28,6 +28,11 @@ function deleteArt(e) {
     return 0;
   }
 }
+function look(e){
+let id = $(e).attr("id");
+ sessionStorage.setItem("artid", id);
+ window.location = "http://localhost:3000/showart";
+}
 
 function getInfo() {
   // 管理员请求所有的用户信息
@@ -47,7 +52,7 @@ function getInfo() {
                 <li>${item.title}</li>
                 <li>${item.content}</li>
                 <li>${item.email}</li>
-                <li id=${item.id} onclick="deleteArt(this)">删除</li>
+                <li ><span id=${item.id} onclick="deleteArt(this)">删除 </span> <span id=${item.id} onclick="look(this)"> 查看</span></li>
               </ul>
               </li>`;
         $(".users").append(con);

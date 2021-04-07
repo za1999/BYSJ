@@ -28,7 +28,11 @@ function deletePost(e) {
     return 0;
   }
 }
-
+function look(e){
+  let id = $(e).attr("id");
+   sessionStorage.setItem("postid", id);
+   window.location = "http://localhost:3000/showpost";
+}
 function getInfo() {
   // 管理员请求所有的用户信息
   $.ajax({
@@ -48,7 +52,7 @@ function getInfo() {
                   <li>${item.con}</li>
                   <li>${item.email}</li>
                    <li><img src=${item.img}></img></li>
-                  <li id=${item.postid} onclick="deletePost(this)">删除</li>
+                  <li ><span id=${item.postid} onclick="deletePost(this)">删除 </span><span id=${item.postid} onclick="look(this)"> 查看</span></li>
                 </ul>
                 </li>`;
           $(".users").append(con);
