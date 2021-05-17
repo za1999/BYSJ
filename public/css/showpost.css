@@ -106,14 +106,17 @@ box-shadow:0 1px 4px rgba(0, 0, 0, 0.3), 0 0 20px rgba(0, 0, 0, 0.1) inset;
     background-color: rgb(172, 201, 172);
     padding: 5px;
 }
-
+.plimg img{
+    max-width: 400px !important;
+}
 
 /* 写评论那个模块 */
 .pcom{
     position: fixed;
+    max-height: 400px;
+    overflow: auto;
     top:150px;
     left:calc(50% - 200px);
-    height: 222px;
     width: 400px;
     box-shadow:0 1px 4px rgba(0, 0, 0, 0.3), 0 0 20px rgba(0, 0, 0, 0.1) inset;
     border-radius: 5px;
@@ -129,6 +132,14 @@ box-shadow:0 1px 4px rgba(0, 0, 0, 0.3), 0 0 20px rgba(0, 0, 0, 0.1) inset;
     padding: 5px;
     overflow: auto;
     outline: lightblue;
+}
+.plimg{
+    text-align: center;
+    margin-top: 10px;
+}
+.plimg img{
+    max-width: 800px;
+    border-radius: 5px;
 }
 /* 写评论的提交按钮 */
 .input{

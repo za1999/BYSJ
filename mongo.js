@@ -44,30 +44,32 @@ var comment = new Schema({
 
 // 创建帖子表！
 var posts = new Schema({
-
-    name:{
-        type:String,
-        required:true //必须要有
-    },
-    con:{
-    type:String,
-        },
-    postid:{
-        type:String,
-        required:true //必须要有
-    }, 
-    title:{
-        type:String,
-        required:true //必须要有
-         },
-    email:{
-            type:String,
-            required:true
-        },
-        img:{
-         type:String,
-        }
-})
+  name: {
+    type: String,
+    required: true, //必须要有
+  },
+  con: {
+    type: String,
+  },
+  postid: {
+    type: String,
+    required: true, //必须要有
+  },
+  title: {
+    type: String,
+    required: true, //必须要有
+  },
+  email: {
+    type: String,
+    required: true,
+  },
+  img: {
+    type: String,
+  },
+  time: {
+    type: String,
+  },
+});
 
 
 
@@ -101,24 +103,26 @@ var artinfo = new Schema({
 
 // 创建帖子评论
 var pcomment = new Schema({
-
-    name:{
-        type:String,
-        required:true //必须要有
-    },
-    con:{
-    type:String,
-    required:true //必须要有
-        },
-    postid:{
-        type:String,
-        required:true //必须要有
-    } ,
-    time:{
-        type:String,
-        required:true //必须要有
-    }  
-})
+  name: {
+    type: String,
+    required: true, //必须要有
+  },
+  con: {
+    type: String,
+    required: true, //必须要有
+  },
+  postid: {
+    type: String,
+    required: true, //必须要有
+  },
+  time: {
+    type: String,
+    required: true, //必须要有
+  },
+  img: {
+    type: String,
+  },
+});
 
 
 

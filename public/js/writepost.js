@@ -16,6 +16,7 @@ $(function(){
     $(".inputPost").click(function(){
         let title = $(".title").val();
         let wcon = $(".wcon").text()
+        let time = Date()
         if(title.length<=0){
             tip("标题不可以为空！")
         }else{
@@ -30,7 +31,8 @@ $(function(){
                     name:sessionStorage.getItem('name'),
                     con:wcon,
                     title:title,
-                    img:img
+                    img:img,
+                    time:time
                 },
                 success: function(data) {
                  if(data==200){

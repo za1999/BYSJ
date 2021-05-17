@@ -111,7 +111,7 @@ font-family: "华文行楷";
 
 .hright ul{
     height: 100%;
-    width: 100%;
+    width: 80%;
     float: left;
     display: flex;
     flex-flow: row wrap;
@@ -207,7 +207,7 @@ color: white;
 
 /****************** 下面是帖子区css**************************************** */
 .post{
-    min-height: 299px;
+    min-height: 384;
 }
 /* 囊括所有帖子的ul */
 .posts{

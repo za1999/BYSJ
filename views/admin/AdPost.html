@@ -111,6 +111,7 @@
         z-index: 99;
       }
     </style>
+      <link rel="stylesheet" href="http://localhost:3000/public/css/pagebtn.css">
   </head>
   <body>
     <div class="ding">这里是提示信息！</div>
@@ -145,6 +146,23 @@
               </ul>
             </li>
           </ul>
+                    <!-- 这里是分页按钮 -->
+        <div class="pageBox" style="margin-top: 20px;">
+                <div class="pageBtns">
+                    <ul class="btns">
+                        <li class="btn last" onclick="lastpage()">
+                            <img src="http://localhost:3000/public/img/right.png" alt="">
+                        </li>
+                        <li class="btn btnpage choicePageBtn">1</li>
+                        <li class="btn btnpage">2</li>
+                        <li class="btn btnpage">3</li>
+                        <li class="btn pageother">...</li>
+                        <li class="btn next" onclick="nextpage()">
+                            <img src="http://localhost:3000/public/img/right.png" alt="">
+                        </li>
+                    </ul>
+                </div>
+        </div>
         </div>
       </div>
     </div>

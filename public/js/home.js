@@ -5,55 +5,26 @@ $(function () {
   }
 
   // 登陆页面开始请求所有文章
-  $.ajax({
-    type: "post",
-    url: "http://localhost:3000/allart",
-    success: function (data) {
-      console.log(data)
-      for(let i=0;i<4;i++){
-     
-          $(".newsTitle").eq(i).text(data[i].title);
-         $(".authorn").eq(i).text("作者:"+data[i].author);
-         $(".homeNews").eq(i).attr("artid",data[i].id);
-      }
-      $(".art").remove();
-      for (k in data) {
-        var con = `
-                <li class="art">
-                <p>文章ID:<span style="margin-right: 10px;">${data[k].id}</span> ${data[k].title} <span class="author">作者:${data[k].author}</span></p>
-                <div class="all" aid='${data[k].id}' onclick="look(this)">
-                    详情
-                </div>
-            </li>`;
-        $(".articles").append(con);
-      }
-    },
-    error: function (e) {
-      alert("接收数据错误！");
-    },
+  changePage(1,1);
+
+
+  // 轮播图的跳转
+  $(".homeNews").click(function () {
+    if ($(this).attr("artid")) {
+      sessionStorage.setItem("artid", $(this).attr("artid"));
+      window.location = "/showart";
+    }
   });
-
-
-// 轮播图的跳转
-$(".homeNews").click(function(){
-  if($(this).attr("artid")){
-    sessionStorage.setItem("artid", $(this).attr("artid"));
-    window.location = "/showart";
-  }
-});
-
 
   // 登陆注册的点击
   $(".login").click(function () {
-
-	var r = confirm("您要前往登陆注册页面吗？");
-  if (r == true) {
-       window.location = "/login";
+    var r = confirm("您要前往登陆注册页面吗？");
+    if (r == true) {
+      window.location = "/login";
       return true;
-  } else {
-   return 0;
-  }
-   
+    } else {
+      return 0;
+    }
   });
 
   // 写文章判断及跳转
@@ -138,12 +109,15 @@ $(".homeNews").click(function(){
   setInterval(() => {
     settimeTalk();
   }, 1000);
+
+
   // 下面是帖子的一些js代码
   $.ajax({
     type: "post",
     url: "http://localhost:3000/allpost",
     success: function (data) {
       $(".po").remove();
+      console.log(data)
       for (k in data) {
         var con = `
             <li class="po" postid='${data[k].postid}' onclick="lookpost(this)">
@@ -154,7 +128,7 @@ $(".homeNews").click(function(){
                 </div>
                 <p class="title"><a href="javascript:;">${data[k].title}</a></p>
                 <p class="text">
-                ${data[k].con}
+                ${data[k].time}
                 </p>
             </div>
 
@@ -242,7 +216,7 @@ function settimeTalk() {
       if (data === "0") {
       } else {
         data.forEach((item) => {
-            console.log(item.email, sessionStorage.getItem("email"));
+          console.log(item.email, sessionStorage.getItem("email"));
           if (item.email == sessionStorage.getItem("email")) {
             let con = `<div class="tr tc">
                     <div class="yourName"><span class="talkTime timeright">${item.time}</span><span class="wo">我</span></div>
@@ -254,10 +228,114 @@ function settimeTalk() {
                     <div class="OtherName">${item.name}<span class="talkTime timeleft">${item.time}</span></div>
                     <div class="OtherText">${item.con}</div>
                 </div>`;
-                $(".cbox").append(con);
+            $(".cbox").append(con);
           }
         });
       }
+    },
+    error: function (e) {
+      alert("接收数据错误！");
+    },
+  });
+}
+
+
+
+
+
+
+
+// 这里设置生成分页函数
+function pagemom(num) {
+  let pagenum = Math.ceil(num / 8);
+  $(".btnpage").remove();
+  for (let i = 0; i < pagenum; i++) {
+    let con = `<li class="btn btnpage" onclick="clickBtn(this)" page=${
+      pagenum - i
+    }>${pagenum - i}</li>`;
+    $(".last").after(con);
+  }
+  $(".pageother").text("共" + pagenum + "页");
+  $(".btnpage").eq(0).addClass("choicePageBtn");
+}
+
+function clickBtn(e) {
+  let num = e.getAttribute("page");
+   $(".btnpage").removeClass("choicePageBtn");
+   $(".btnpage").eq(num-1).addClass("choicePageBtn");
+
+        changePage(num);
+
+}
+
+// 上一页的点击
+function lastpage() {
+  let num = $(".choicePageBtn").attr("page");
+  if (num > 1) {
+    $(".btnpage").removeClass("choicePageBtn");
+    $(".btnpage")
+      .eq(num - 2)
+      .addClass("choicePageBtn");
+      changePage(num-1)
+  }
+}
+
+// 下一页的点击
+function nextpage() {
+  let num = $(".btnpage").last().attr("page");
+  let nownum = $(".choicePageBtn").attr("page");
+  if (num > nownum) {
+    $(".btnpage").removeClass("choicePageBtn");
+    $(".btnpage").eq(nownum).addClass("choicePageBtn");
+    changePage(parseInt(nownum) + 1);
+  }
+}
+
+function changePage(num,first) {
+ 
+  let xs = num;
+  $.ajax({
+    type: "post",
+    url: "http://localhost:3000/allart",
+    success: function (data) {
+      if(first){
+        pagemom(data.length);
+      }
+      for (let i = 0; i < 4; i++) {
+        $(".newsTitle").eq(i).text(data[i].title);
+        $(".authorn")
+          .eq(i)
+          .text("作者:" + data[i].author);
+        $(".homeNews").eq(i).attr("artid", data[i].id);
+      }
+      $(".art").remove();
+      let x = 0;
+      if(num==1){
+        let data2 = data.slice((num - 1) * 8, num*8);
+             for (let i = 0; i < data2.length; i++) {
+               var con = `
+                <li class="art">
+                <p>文章ID:<span style="margin-right: 10px;">${data2[i].id}</span> ${data2[i].title} <span class="author">作者:${data2[i].author}</span></p>
+                <div class="all" aid='${data2[i].id}' onclick="look(this)">
+                    详情
+                </div>
+            </li>`;
+               $(".articles").append(con);
+             }
+      }else{
+         let data2 = data.slice((xs- 1) * 8, xs*8-1);
+              for (let i = 0; i < data2.length; i++) {
+                var con = `
+                <li class="art">
+                <p>文章ID:<span style="margin-right: 10px;">${data2[i].id}</span> ${data2[i].title} <span class="author">作者:${data2[i].author}</span></p>
+                <div class="all" aid='${data2[i].id}' onclick="look(this)">
+                    详情
+                </div>
+            </li>`;
+                $(".articles").append(con);
+              }
+      }
+ 
     },
     error: function (e) {
       alert("接收数据错误！");

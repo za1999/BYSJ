@@ -34,11 +34,13 @@ allpcom();
         // 关闭评论框
         $(".pcom span").click(function(){
             $(".icom").text('')
+            $(".layui-upload-img").attr("src",'');
             $(".pcom").hide(1000)
         })
         // 开启评论框
         $(".join").click(function(){
             $(".icom").text('')   
+            $(".layui-upload-img").attr("src", "");
             if(sessionStorage.getItem('name')){
                 $(".pcom").show(1000)
             }else{
@@ -79,7 +81,7 @@ function timeTrans(date){
 // 发送聊天的函数
 function send(){
     let con = $(".icom").text()
-
+    let imgsrc = $(".layui-upload-img").attr("src");
     if(con.length==0){
         tip("发送内容不能为空")
     }else{
@@ -90,6 +92,7 @@ function send(){
                     postid:sessionStorage.getItem('postid'),
                     name:sessionStorage.getItem('name'),
                     con:con,
+                    img:imgsrc,
                     time:new Date()
                 },
                 success: function(data) {
@@ -138,7 +141,8 @@ function allpcom(){
                      console.log(data)
                     $(".com").remove()
                     for(k in data) {
-                       var con = `
+                        if(data[k].img){
+                 var con = `
                        <div class="com">
             <p class="name">
                 <span>${data[k].name}</span>（<span>${data[k].time}</span>）
@@ -146,9 +150,30 @@ function allpcom(){
             <div class="con">
 
             ${data[k].con}
+            <div class="plimg">
+            <img src=${data[k].img} ></img>
             </div>
-        </div>`
-                       $(".post").append(con)
+            
+            </div>
+        </div>`;
+        $(".post").append(con);
+                        }else{
+                                     var con = `
+                       <div class="com">
+            <p class="name">
+                <span>${data[k].name}</span>（<span>${data[k].time}</span>）
+            </p>
+            <div class="con">
+
+            ${data[k].con}
+
+            
+            </div>
+        </div>`;
+        $(".post").append(con);
+                        }
+      
+                       
        
                    }
                  }

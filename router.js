@@ -211,6 +211,7 @@ router.post("/inputPost", function (req, res) {
     title: req.body.title,
     email: req.body.email,
     img: req.body.img,
+    time: req.body.time,
   });
   post.save().then(() => {
     res.send("200");
@@ -258,6 +259,7 @@ router.post("/addpmon", function (req, res) {
     name: req.body.name,
     con: req.body.con,
     time: req.body.time,
+    img: req.body.img,
   });
   pcom.save().then(() => {
     res.send("200");
@@ -364,7 +366,6 @@ router.post("/AdAllUser", function (req, res) {
 });
 // 管理员删除文章的接口
 router.post("/deleteArt", function (req, res) {
-
   mon.art.remove(
     {
       id: req.body.id,
@@ -383,7 +384,6 @@ router.post("/deleteArt", function (req, res) {
 });
 // 管理员删除帖子的接口
 router.post("/deletePost", function (req, res) {
-
   mon.post.remove(
     {
       postid: req.body.id,
@@ -402,7 +402,6 @@ router.post("/deletePost", function (req, res) {
 });
 // 管理员删除用户的接口
 router.post("/deleteUser", function (req, res) {
-
   mon.user.remove(
     {
       email: req.body.email,

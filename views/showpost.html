@@ -18,6 +18,11 @@
     <span style="font-weight: 600;color: red;font-size: 20;cursor: pointer;">x</span>
     <div class="icom" contenteditable="true"></div>
     <div class="input">评论</div>
+       <p style="text-align: center;font-weight: 600;">配图</p>
+        <input type="file" id="image" lay-verify="required" onchange="toBase64()" accept="image/jpeg,image/png,image/jpg" class="layui-upload-button" id='file' style="margin-left: 20px;">
+        <div class="layui-upload-list plimg" style="text-align: center;">
+            <img class="layui-upload-img" name="titleBase64Img" id="base64Img" src="" >
+        </div>
 </div>
 
 
@@ -45,5 +50,20 @@
         <!-- 其他人的楼！！ -->
  
     </div>
+    <script>
+        function toBase64(){
+    var file = document.querySelector('input[type=file]').files[0];
+    var reader = new FileReader();
+    reader.onloadend = function () {
+        $("#base64Img").attr("style","display:inline-block");
+        $("#base64Img").attr("src",reader.result);
+        img = reader.result;
+    }
+    if (file) {
+        reader.readAsDataURL(file);
+    }
+
+}
+    </script>
 </body>
 </html>

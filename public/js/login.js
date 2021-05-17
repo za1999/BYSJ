@@ -1,4 +1,4 @@
-$(function(){
+$(function () {
   // 一开始清除所有的session阿
   sessionStorage.clear();
   /************************************这里是登陆的地方 ********************/
@@ -8,7 +8,8 @@ $(function(){
     // 这里是邮箱的检验
     var yx = $("#lyx").val();
     var mm = $("#lmm").val();
-    var yxpd = /^[A-Za-z\d]+([-_.][A-Za-z\d]+)*@([A-Za-z\d]+[-.])+[A-Za-z\d]{2,4}$/;
+    var yxpd =
+      /^[A-Za-z\d]+([-_.][A-Za-z\d]+)*@([A-Za-z\d]+[-.])+[A-Za-z\d]{2,4}$/;
     if (yxpd.test(yx) == false) {
       tip("邮箱格式不正确！");
       return 0;
@@ -66,7 +67,8 @@ $(function(){
     // 邮箱的验证
     var zyx = $("#zyx").val();
     console.log(zyx);
-    var zcs = /^[A-Za-z\d]+([-_.][A-Za-z\d]+)*@([A-Za-z\d]+[-.])+[A-Za-z\d]{2,4}$/;
+    var zcs =
+      /^[A-Za-z\d]+([-_.][A-Za-z\d]+)*@([A-Za-z\d]+[-.])+[A-Za-z\d]{2,4}$/;
     if (zcs.test(zyx) == false) {
       tip("邮箱格式不正确！");
       return 0;
@@ -121,18 +123,15 @@ $(function(){
   var admin = this.getElementById("admin");
   admin.onclick = function () {
     sessionStorage.clear();
-     window.open("/Admin-login")
+    window.open("/Admin-login");
   };
-})
-
-
+});
 
 // 提示信息的函数
-function tip(data){
-    $('.ding').text(data)
-    $('.ding').fadeIn(1000)
-    setTimeout(() => {
-        $('.ding').fadeOut(1000)
-    }, 2000);
-
+function tip(data) {
+  $(".ding").text(data);
+  $(".ding").fadeIn(1000);
+  setTimeout(() => {
+    $(".ding").fadeOut(1000);
+  }, 2000);
 }

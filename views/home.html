@@ -5,6 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="public/css/home.css">
+    <link rel="stylesheet" href="public/css/pagebtn.css">
     <title>首页</title>
 
      <!-- 轮播引入 -->
@@ -40,6 +41,7 @@
             </ul>
         </div>
         <div class="hright">
+            <img src="public/img/ulogo.jpg" alt="" style="width: 75px;height: 75px;border-radius: 50%;position: relative;top: 4px;" class="headimg">
             <ul>
                 <li class="login">登 陆 / 注 册 </li>
                 <li>用户中心</li>
@@ -104,8 +106,23 @@
         </li>
     </ul>
 
-
-
+<!-- 这里是分页按钮 -->
+        <div class="pageBox">
+                <div class="pageBtns">
+                    <ul class="btns">
+                        <li class="btn last" onclick="lastpage()">
+                            <img src="public/img/right.png" alt="">
+                        </li>
+                        <li class="btn btnpage choicePageBtn">1</li>
+                        <li class="btn btnpage">2</li>
+                        <li class="btn btnpage">3</li>
+                        <li class="btn pageother">...</li>
+                        <li class="btn next" onclick="nextpage()">
+                            <img src="public/img/right.png" alt="">
+                        </li>
+                    </ul>
+                </div>
+        </div>
 
 
         </div>
